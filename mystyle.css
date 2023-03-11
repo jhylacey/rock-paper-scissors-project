@@ -1,0 +1,64 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.buttons {
+    padding: 25px;
+    margin: 25px;
+    background-color: #FF0000;
+    animation: bgColor .2s infinite;
+}
+
+@keyframes bgColor {
+    12.5% {
+        background-color: #fa3e3e;
+    }
+
+    25% {
+        background-color: #ffbe45;
+    }
+
+    37.5% {
+        background-color: #ffff50;
+    }
+
+    50% {
+        background-color: #a3ff48;
+    }
+
+    62.5% {
+        background-color: #3dffff;
+    }
+
+    75% {
+        background-color: #3d3dff;
+    }
+
+    87.5% {
+        background-color: #ca61ff;
+    }
+
+    100% {
+        background-color: #ff35a1;
+    }
+}
+
+#hide {
+    flex-direction: column;
+    align-items: center;
+}
+
+#again {
+    display: none;
+}
+
+.choices {
+    padding: 20px;
+}
+
+#gameResults {
+    font-size: 50px;
+}
