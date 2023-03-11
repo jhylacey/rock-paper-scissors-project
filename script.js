@@ -6,6 +6,15 @@ let compScore = 0;
 let roundCount = 0;
 
 
+// a function that returns the results of an event listener button click
+// a function that receives the results of a event listener button click and compares the result to a randomized computer choice and returns the results
+// a function that keeps count of the results as a score count 
+// a function that keeps count of rounds
+// a function that displays the winner based on rounds
+
+
+
+
 
 
 // get computers choice of rock paper or scissors
@@ -20,36 +29,7 @@ function getComputerChoice() {
 
 
 
-function playRoundRock(compChoice, pChoice) {
-    pChoice = "rock";
-    compChoice = getComputerChoice();
-
-    if (pChoice === compChoice) {
-        result = "draw";
-        roundCount = roundCount + 1;
-
-        displayResults(`It's a draw this round. You both picked ${pChoice}!`)
-
-    } else if (
-        (pChoice === 'rock' && compChoice === 'paper') ||
-        (pChoice === 'paper' && compChoice === 'scissors') ||
-        (pChoice === 'scissors' && compChoice === 'rock')) {
-        result = "loss";
-        compScore = compScore + 1;
-
-        displayResults(`You lost a round! ${compChoice} beats ${pChoice}!`)
-
-    } else {
-        result = "win";
-        playerScore = playerScore + 1;
-        roundCount = roundCount + 1;
-        displayResults(`You win a round! ${pChoice} beats ${compChoice}!`)
-    }
-    return result;
-}
-
-function playRoundPaper(compChoice, pChoice) {
-    pChoice = "paper";
+function playRound(compChoice, pChoice) {
     compChoice = getComputerChoice();
 
     if (pChoice === compChoice) {
@@ -61,16 +41,10 @@ function playRoundPaper(compChoice, pChoice) {
         (pChoice === 'paper' && compChoice === 'scissors') ||
         (pChoice === 'scissors' && compChoice === 'rock')) {
         result = "loss";
-        compScore = compScore + 1;
-        roundCount = roundCount + 1;
-
-
         displayResults(`You lost a round! ${compChoice} beats ${pChoice}!`)
 
     } else {
         result = "win";
-        playerScore = playerScore + 1;
-        roundCount = roundCount + 1;
         displayResults(`You win a round! ${pChoice} beats ${compChoice}!`)
     }
     return result;
@@ -80,47 +54,32 @@ displayResults = (results) => {
     document.querySelector('#gameResults').textContent = results
 }
 
-function playRoundScissors(compChoice, pChoice) {
-    pChoice = "scissors";
-    compChoice = getComputerChoice();
-
-    if (pChoice === compChoice) {
-        result = "draw";
-        roundCount++;
-
-        displayResults(`It's a draw this round. You both picked ${pChoice}!`)
-
-    } else if (
-        (pChoice === 'rock' && compChoice === 'paper') ||
-        (pChoice === 'paper' && compChoice === 'scissors') ||
-        (pChoice === 'scissors' && compChoice === 'rock')) {
-        result = "loss";
-        compScore = compScore + 1;
-        roundCount++;
-
-        displayResults(`You lost a round! ${compChoice} beats ${pChoice}!`)
-
-    } else {
-        result = "win";
-        playerScore = playerScore + 1;
-        roundCount++;
-        displayResults(`You win a round! ${pChoice} beats ${compChoice}!`)
-    }
-    return roundCount;
-
-}
 
 
+// let data1 = "compchoice";
+// let data2;
+
+// const test = (value) => {
+//     function()
+// }
 
 //select buttons
-const rockBtn = document.querySelector('#rockBtn');
-rockBtn.addEventListener("click", playRoundRock)
+const rockBtn = document.querySelector('#rock');
+rockBtn.addEventListener("click", () => {
+    playRound(compChoice, "rock")
+})
 
-const paperBtn = document.querySelector('#paperBtn');
-paperBtn.addEventListener("click", playRoundPaper)
+const paperBtn = document.querySelector('#paper');
+paperBtn.addEventListener("click", () => {
+    playRound(compChoice, "paper")
+})
 
-const scissorsBtn = document.querySelector('#scissorBtn');
-scissorsBtn.addEventListener("click", playRoundScissors)
+const scissorsBtn = document.querySelector('#scissors');
+scissorsBtn.addEventListener("click", () => {
+    playRound(compChoice, "scissors")
+})
+
+//get choices or whatever
 
 
 
