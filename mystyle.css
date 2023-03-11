@@ -2,6 +2,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
+    max-height: 100%;
 
 }
 
@@ -49,6 +51,8 @@ body {
 #hide {
     flex-direction: column;
     align-items: center;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #again {
@@ -57,8 +61,13 @@ body {
 
 .choices {
     padding: 20px;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 #gameResults {
-    font-size: 50px;
+    display: flex;
+    font-size: 25px;
+    max-width: 100%;
+    max-height: 100%;
 }
